@@ -20,7 +20,10 @@ import { io } from 'socket.io-client'
 import TextMsgItem from '@/components/TextMsgItem/index.vue'
 import NoticeItem from './components/NoticeItem/index.vue'
 
-const socket = io(import.meta.env.VITE_SOCKET_URL)
+const socket = io(import.meta.env.VITE_SOCKET_URL, {
+  path: '/chat-server',
+  withCredentials: true,
+})
 
 // 动态加载头像
 // const loadAvatar = () => {

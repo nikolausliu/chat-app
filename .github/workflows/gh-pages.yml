@@ -12,13 +12,17 @@ jobs:
     concurrency:
       group: ${{ github.workflow }}-${{ github.ref }}
     steps:
+      - uses: pnpm/action-setup@v2.1.0 # 使用pnpm来安装依赖
+        with:
+          version: 6.32.2
+
       - uses: actions/checkout@v2
 
       - name: Install dependencies
-        run: npm ci
+        run: pnpm i
 
       - name: Build
-        run: npm run build
+        run: pnpm build
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3

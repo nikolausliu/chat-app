@@ -23,11 +23,12 @@ import NoticeItem from './components/NoticeItem/index.vue'
 const socket = io(import.meta.env.VITE_SOCKET_URL)
 
 // 动态加载头像
-const loadAvatar = () => {
-  const name = Math.floor(Math.random() * 10) + 1
-  return import(`./assets/avatars/${name}.png`).then(res => res.default)
-}
+// const loadAvatar = () => {
+//   const name = Math.floor(Math.random() * 10) + 1
+//   return import(`./assets/avatars/${name}.png`).then(res => res.default)
+// }
 let avatarUrl = ''
+const randomAvatarUrl = () => `/assets/avatars/${Math.floor(Math.random() * 10) + 1}.png`
 
 const msgs = ref([])
 const msg = ref('')
@@ -66,7 +67,7 @@ const handleScroll = () => {
 const handleSend = async () => {
   if (msg.value === '') return
   if (!avatarUrl) {
-    avatarUrl = await loadAvatar()
+    avatarUrl = randomAvatarUrl()
   }
   socket.emit('message', {
     type: 'text',

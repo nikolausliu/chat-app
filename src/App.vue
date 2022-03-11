@@ -28,7 +28,7 @@ const socket = io(import.meta.env.VITE_SOCKET_URL)
 //   return import(`./assets/avatars/${name}.png`).then(res => res.default)
 // }
 let avatarUrl = ''
-const randomAvatarUrl = () => `/assets/avatars/${Math.floor(Math.random() * 10) + 1}.png`
+const randomAvatarUrl = () => `./assets/avatars/${Math.floor(Math.random() * 10) + 1}.png`
 
 const msgs = ref([])
 const msg = ref('')

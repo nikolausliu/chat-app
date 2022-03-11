@@ -2,7 +2,7 @@
   <div class="text-msg-item" :class="[isSelf ? 'self' : 'others', showName ? 'has-name' : '']">
     <template v-if="isSelf">
       <div class="msg-box">
-        <div v-if="showName" class="nickname">{{ socketId }}</div>
+        <div v-if="showName" class="nickname">{{ info.socketId }}</div>
         <div class="msg">{{ info.value }}</div>
       </div>
       <img class="avatar" :src="info.avatarUrl" alt="" />
@@ -10,7 +10,7 @@
     <template v-else>
       <img class="avatar" :src="info.avatarUrl" alt="" />
       <div class="msg-box">
-        <div v-if="showName" class="nickname">{{ socketId }}</div>
+        <div v-if="showName" class="nickname">{{ info.socketId }}</div>
         <div class="msg">{{ info.value }}</div>
       </div>
     </template>
@@ -36,7 +36,7 @@ const props = defineProps({
   },
   showName: {
     type: Boolean,
-    default: false,
+    default: true,
   }
 })
 

@@ -95,6 +95,9 @@ export default {
     .avatar {
       margin-right: 20px;
     }
+    .msg-box {
+      align-items: flex-start;
+    }
     .msg {
       background: #fff;
       &::before {

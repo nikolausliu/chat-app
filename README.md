@@ -1,6 +1,6 @@
 # chat-app
 
-使用socket.io搭建一个即使通讯服务的demo。客户端端使用`Vite2 + Vue3 + socket.io-client`，后端使用`express4 + socket.io`。该仓库是客户端源码仓库。
+使用socket.io搭建一个即使通讯服务的demo。客户端端使用`Vite2 + Vue3 + socket.io-client`，后端使用`express4 + socket.io`。该仓库是**客户端**源码仓库。
 
 - [客户端源码](https://github.com/nikolausliu/chat-app)
 - [服务端源码](https://github.com/nikolausliu/chat-server)
